@@ -124,7 +124,10 @@ function exec(input)
 <input type="number" id="faults">
 <br><br>
 
-<button onclick="checkIn(document.getElementById('carReg').value, document.getElementById('carMaM').value, document.getElementById('faults').value)">Check In Car</button>
+<button onclick="checkIn(document.getElementById('carReg').value, 
+						document.getElementById('carMaM').value, 
+						document.getElementById('faults').value)">Check In Car</button>
+						
 <button onclick="checkOut(document.getElementById('carReg').value)">Check Out Car</button>
 <br>
 <button onclick="calcBill(document.getElementById('carReg').value)">Calculate Bill</button>
