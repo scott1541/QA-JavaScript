@@ -1,0 +1,50 @@
+<html>
+<head>
+</head>
+<body>
+<script>
+var text;
+var para;
+
+
+function create() 
+{
+	para = document.createElement("p");
+}
+
+function texting() 
+{
+	text = document.getElementById('input1').value;
+	var node = document.createTextNode(text);
+	para.appendChild(node);
+	var element = document.getElementById("div1");
+	element.appendChild(para);
+}
+function delet()
+ {
+	var child = document.getElementById("p");
+	child.parentNode.removeChild(child);
+ }
+
+</script>
+
+<input type="text" id="input1">
+
+<button onclick="create()">Create Paragraph</button>
+<button onclick="texting()">Text Me Up</button>
+<button onclick="delet()">Delete Paragraph</button>
+
+
+<div id="div1">
+</div>
+
+</body>
+</html>
+
+<!--
+DOM
+In JS, create a function that creates a paragraph tag.
+Another function that changes the text of that paragraph tag to what is in a textbox
+Another function that deletes the paragraph tag
+All of these functions should be called with a button(s).
+-->

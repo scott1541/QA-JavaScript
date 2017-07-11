@@ -1,0 +1,60 @@
+<html>
+<head>
+</head>
+<body>
+<script = "javascript">
+
+var elliott = 'He said "My name is elliott"';
+var test;
+
+window.alert(elliott);
+
+function upper()
+{
+	elliott = elliott.toUpperCase();
+	window.alert(elliott);
+}
+
+test = 5 + "hello"
+
+window.alert(test);
+
+function arrayStuff()
+{
+
+var strArray = ["hello", "my", "name"];
+
+for(var i = 0; i < strArray.length-1; i++)
+{
+	window.alert(strArray[i]);
+}
+
+strArray.push("Elliott");
+
+window.alert(strArray);
+
+strArray.pop();
+
+window.alert(strArray);
+
+}
+
+
+</script>
+
+<button onclick="upper()">UpperCase Elliott</button>
+
+<button onclick="arrayStuff()">Do Array Stuff!</button>
+
+</body>
+</html>
+
+<!--
+Create a variable with  "He said "My name is elliott" " as the value. and then display it.
+Using string methods, convert this string to uppercase and display it.
+	Perform an addition on a number variable and a string variable ("1" + 2 etc.)
+	Create an array with 3 strings and output them all.
+Add another string with JS and output them.
+Remove the last string from the array with JS and then output them.
+
+-->

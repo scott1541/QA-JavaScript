@@ -1,0 +1,67 @@
+<html>
+<head>
+</head>
+<body>
+<script = "javascript">
+
+var number;
+function square(number)
+{
+	return number * number;
+}
+
+
+var number1;
+var number2;
+var number3;
+function add(number1, number2, number3)
+{
+	document.write(number1 + number2 + number3);
+	return number1 + number2 + number3;
+}
+
+
+var personObject = 
+{
+	name: "Ladon",
+	age: 25,
+	occupation:"Store Boy"
+}
+
+function displayPerson()
+{
+	document.write("Person name: " + personObject.name);
+	document.write("Age is: " + personObject.age ); 
+	document.write("Occupation is: " + personObject.occupation ); 
+
+	personObject.occupation = "Head Boy";
+
+	document.write("\n\nPerson name: " + personObject.name);
+	document.write("Age is: " + personObject.age ); 
+	document.write("Occupation is: " + personObject.occupation ); 
+}
+
+function ageLadon()
+{
+	personObject.age++;
+	window.alert("Ladon is now :  " + personObject.age);
+}
+
+
+</script>
+
+<button onclick="displayPerson()">Get person info</button>
+
+<button onclick="ageLadon()">Get older Ladon!</button>
+
+</body>
+</html>
+
+<!--
+Create a function accepts a number and outputs its square
+Create a function that accepts 3 numbers and returns the sum of them.
+Create a Person object with three values, name, age, occupation.
+Output the contents of that object, then edit them, and output again.
+Create a button that calls a function when clicked.
+Create a button that increases the age of your Person object
+-->
