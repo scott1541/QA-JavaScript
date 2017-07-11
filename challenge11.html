@@ -4,16 +4,16 @@
 </head>
 <body>
 <script = "javascript">
+//"use strict";
 
 var garage = new Array();
-
 
 function checkIn(reg, make, flts)
 {
 
 	if(reg && make)
 	{
-		car = new Object();
+		var car = new Object();
 		car.carReg = reg; 
 		car.carMake = make; 
 		
@@ -127,7 +127,7 @@ function exec(input)
 <button onclick="checkIn(document.getElementById('carReg').value, 
 						document.getElementById('carMaM').value, 
 						document.getElementById('faults').value)">Check In Car</button>
-						
+
 <button onclick="checkOut(document.getElementById('carReg').value)">Check Out Car</button>
 <br>
 <button onclick="calcBill(document.getElementById('carReg').value)">Calculate Bill</button>
@@ -140,7 +140,7 @@ function exec(input)
 <input type="text" id="command">
 <button onclick="exec(document.getElementById('command').value)">Execute</button>
 
-<br><br><h>Usage:</h4><br>
+<br><br><h>CLI Usage:</h4><br>
 <h>Add:   ADD REGNUM MAKE MODEL FAULTS</h4><br>
 <h>Checkout:   OUT REGNUM </h4><br>
 <h>Bill:   BILL REGNUM</h4><br>
