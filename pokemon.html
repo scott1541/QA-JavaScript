@@ -18,8 +18,6 @@ function fight(type1, type2)
 	var types = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"];
 		
 	var damage = 0;
-	var index1;
-	var index2;
 	var decomp1 = type1.split(" ");
 	var decomp2 = type2.split(" ");
 
@@ -27,9 +25,7 @@ function fight(type1, type2)
 	{
 		for(var y = 0; y <= decomp2.length-1; y++)
 		{
-			index1 = types.findIndex(i => i === decomp1[x]);
-	        index2 = types.findIndex(i => i === decomp2[y]);
-			damage += getDamage(index1, index2);
+			damage += getDamage(types.findIndex(i => i === decomp1[x]), types.findIndex(i => i === decomp2[y]));
 		}
 	}
 
@@ -38,7 +34,7 @@ function fight(type1, type2)
 clearText();
 }
 
-function getDamage(i, j)
+function getDamage(i, j)   //Big dirty pseudo-matrix
 {
 	var damages = [
 					[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.5, 0, 1, 1, 0.5, 1],
