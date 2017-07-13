@@ -14,9 +14,7 @@
 <script = "javascript">
 
 function fight()
-{
-	var types = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"];
-		
+{		
 	var damage = 0;
 
 	getDamage(document.getElementById('poke1').value, document.getElementById('poke2').value);
@@ -29,9 +27,12 @@ clearText();
 function getDamage(type1, type2)   
 {
    var json_obj = JSON.parse(getJSON("http://pokeapi.co/api/v2/type/" + type1 + "/"));
+   var json_obj2 = JSON.parse(getJSON("http://pokeapi.co/api/v2/type/" + type2 + "/"));
     console.log("Name: "+ json_obj.name);
-    console.log("damage: " + json_obj.damage_relations.half_damage_to);
-    console.log("damage: " + findDamage(type2, json_obj));
+    console.log("half dam: " + json_obj.damage_relations.half_damage_to);
+    console.log("double dam: " + json_obj.damage_relations.double_damage_to);
+    console.log("no day: " + json_obj.damage_relations.no_damage_to);
+    //console.log("damage: " + findDamage(type2, json_obj));
  
 }
 function findDamage(x, json_) {

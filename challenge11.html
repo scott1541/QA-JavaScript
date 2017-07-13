@@ -51,10 +51,7 @@ function garageContents()
 {
 	if(garage.length > 0)
 	{
-	for(var i = 0; i < garage.length; i++)
-		{
-			console.log("Vehicle: " + garage[i].carReg + ", " + garage[i].carMake + ", " + garage[i].fault);
-		}
+	garage.forEach(function(item){console.log(`Vehicle: ${item.carReg} ${item.carMake} ${item.fault}`)});
 	}
 	else
 	{
@@ -67,7 +64,7 @@ function calcBill(reg)
 
 	var index = garage.findIndex(i => i.carReg === reg);
 	var pay = garage[index].fault * 45.00
-	console.log("Total cost for " + garage[index].carReg + " is £" + pay);
+	console.log(`Total cost for ${garage[index].carReg} is £ ${pay}`);
 	clearText()
 }
 
