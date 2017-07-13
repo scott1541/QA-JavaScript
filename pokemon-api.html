@@ -1,0 +1,57 @@
+<html>
+<head>
+<h1>QA Pokemon Fight Club II</h1>
+</head>
+<body>
+<br><br><br>
+<input type="text" id="poke1">
+<label for="poke2"> FIGHT! </label>
+<input type="text" id="poke2">
+<button onclick="fight()"> Go! </button>
+<br><br>
+<h2 id="output"> </h2>
+
+<script = "javascript">
+
+function fight()
+{
+	var types = ["normal", "fire", "water", "electric", "grass", "ice", "fighting", "poison", "ground", "flying", "psychic", "bug", "rock", "ghost", "dragon", "dark", "steel", "fairy"];
+		
+	var damage = 0;
+
+	getDamage(document.getElementById('poke1').value, document.getElementById('poke2').value);
+
+	document.getElementById("output").innerHTML = `KAPOW!...  ${type1} does ${damage} damage to ${type2}`;
+
+clearText();
+}
+
+function getDamage(type1, type2)   
+{
+   var json_obj = JSON.parse(getJSON("http://pokeapi.co/api/v2/type/" + type1 + "/"));
+    console.log("Name: "+ json_obj.name);
+    console.log("damage: " + json_obj.damage_relations.half_damage_to);
+    console.log("damage: " + findDamage(type2, json_obj));
+ 
+}
+function findDamage(x, json_) {
+	json_.find(item => item.damage_relations.half_damage_to === x);
+}
+
+function getJSON(Url)
+{
+    var Httpreq = new XMLHttpRequest(); // a new request
+    Httpreq.open("GET", Url, false); 
+    Httpreq.send(null);
+    return Httpreq.responseText; 
+}
+
+function clearText()
+{
+   document.getElementById("poke1").value= "";
+   document.getElementById("poke2").value= "";
+}
+
+</script>
+</body>
+</html>
